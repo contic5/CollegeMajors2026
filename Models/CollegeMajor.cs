@@ -8,23 +8,24 @@ namespace CollegeMajors2026.Models;
 
 public class CollegeMajor
 {
+
     public int Id { get; set; }
 
     [StringLength(60, MinimumLength = 3)]
-    public string Title { get; set; } = string.Empty;
+    public string InstituionName { get; set; } = string.Empty;
 
-    [Display(Name = "Release Date"), DataType(DataType.Date), Required]
-    public DateTime ReleaseDate { get; set; }
+    public string InstitutionState { get; set; } = string.Empty;
 
-    [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$"), Required, StringLength(30)]
-    public string Genre { get; set; } = string.Empty;
+    public string CipTitle { get; set; } = string.Empty;
 
-    [Range(1, 100), DataType(DataType.Currency)]
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal Price { get; set; }
+    public int CredentialLevel { get; set; }
 
-    [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$"), StringLength(5)]
-    public string Rating { get; set; } = string.Empty;
+    public string CredentialName { get; set; } = string.Empty;
+
+    public decimal MedianEarnings4yrUSD { get; set; }
+    public decimal EarningsVsNationalPct { get; set; }
+    public decimal EarningsGrowthPct1YrTo5Yr { get; set; }
+
 }
 // </snippet1>
 #endif

@@ -16,16 +16,14 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var services = scope.ServiceProvider;
-
-    SeedData.Initialize(services);
+    var db = scope.ServiceProvider.GetRequiredService<CollegeMajors2026Context>();
+    db.Database.EnsureCreated();
 }
-
 
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<CollegeMajors2026Context>();
-    db.Database.EnsureCreated();
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
 }
 
 // Configure the HTTP request pipeline.

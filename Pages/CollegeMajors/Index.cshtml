@@ -7,16 +7,12 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
 <form>
     <p>
-        <select asp-for="CollegeMajorGenre" asp-items="Model.Genres">
+        <select asp-for="CredentialName" asp-items="Model.CredentialName">
             <option value="">All</option>
         </select>
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
+        <label>Instituion Name: <input type="text" asp-for="InstituionName" /></label>
         <input type="submit" value="Filter" />
     </p>
 </form>
@@ -25,19 +21,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CollegeMajor[0].Title)
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CollegeMajor[0].ReleaseDate)
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].InstituionName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CollegeMajor[0].Genre)
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].InstitutionState)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CollegeMajor[0].Price)
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].CipTitle)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CollegeMajor[0].Rating)
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].CredentialLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].CredentialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].MedianEarnings4yrUSD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].EarningsVsNationalPct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeMajor[0].EarningsGrowthPct1YrTo5Yr)
             </th>
             <th></th>
         </tr>
@@ -46,24 +54,34 @@
 @foreach (var item in Model.CollegeMajor) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                @Html.DisplayFor(modelItem => item.InstituionName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genre)
+                @Html.DisplayFor(modelItem => item.InstitutionState)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.CipTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rating)
+                @Html.DisplayFor(modelItem => item.CredentialLevel)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                @Html.DisplayFor(modelItem => item.CredentialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedianEarnings4yrUSD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EarningsVsNationalPct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EarningsGrowthPct1YrTo5Yr)
+            </td>
+            <td>
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

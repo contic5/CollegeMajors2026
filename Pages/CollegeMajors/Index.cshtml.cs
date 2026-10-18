@@ -18,15 +18,14 @@ namespace CollegeMajors2026.Pages.CollegeMajors
         public IList<CollegeMajor> CollegeMajor { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)]
-        public string? SearchString { get; set; }
+        public string? InstituionName { get; set; }
 
-        public SelectList? Genres { get; set; }
+        public SelectList? CredentialName { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string? CollegeMajorGenre { get; set; }
 
         public async Task OnGetAsync()
         {
+            /*
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.CollegeMajor
                                             orderby m.Genre
@@ -45,6 +44,11 @@ namespace CollegeMajors2026.Pages.CollegeMajors
                 collegeMajors = collegeMajors.Where(x => x.Genre == CollegeMajorGenre);
             }
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+            */
+            var collegeMajors = from m in _context.CollegeMajor
+            where m.Id<=100
+            select m ;
+            
             CollegeMajor = await collegeMajors.ToListAsync();
         }
 

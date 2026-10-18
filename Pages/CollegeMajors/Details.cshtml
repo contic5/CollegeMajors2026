@@ -12,34 +12,58 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CollegeMajor.Title)
+            @Html.DisplayNameFor(model => model.CollegeMajor.InstituionName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CollegeMajor.Title)
+            @Html.DisplayNameFor(model => model.CollegeMajor.InstituionName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CollegeMajor.ReleaseDate)
+            @Html.DisplayFor(model => model.CollegeMajor.InstitutionState)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CollegeMajor.ReleaseDate)
+            @Html.DisplayFor(model => model.CollegeMajor.InstitutionState)
         </dd>
+
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CollegeMajor.Genre)
+            @Html.DisplayNameFor(model => model.CollegeMajor.CipTitle)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CollegeMajor.Genre)
+            @Html.DisplayNameFor(model => model.CollegeMajor.CipTitle)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CollegeMajor.Price)
+
+         <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.CollegeMajor.CredentialLevel)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CollegeMajor.Price)
+            @Html.DisplayFor(model => model.CollegeMajor.CredentialLevel)
         </dd>
+
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CollegeMajor.Rating)
+            @Html.DisplayNameFor(model => model.CollegeMajor.CredentialName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CollegeMajor.Rating)
+            @Html.DisplayNameFor(model => model.CollegeMajor.CredentialName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.CollegeMajor.MedianEarnings4yrUSD)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CollegeMajor.MedianEarnings4yrUSD)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CollegeMajor.EarningsVsNationalPct)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CollegeMajor.EarningsVsNationalPct)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.CollegeMajor.EarningsGrowthPct1YrTo5Yr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CollegeMajor.EarningsGrowthPct1YrTo5Yr)
         </dd>
     </dl>
 </div>
